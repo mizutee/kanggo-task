@@ -23,6 +23,8 @@ services:
       context: ./backend
     container_name: kanggo-backend
     restart: unless-stopped
+    env_file:
+      - ./backend/.env
     environment:
       NODE_ENV: production
       PORT: 5000
@@ -31,9 +33,6 @@ services:
       DB_USER: ${MYSQL_USER:-kanggo_user}
       DB_PASSWORD: ${MYSQL_PASSWORD:-kanggo_password}
       DB_NAME: ${MYSQL_DATABASE:-kanggo}
-      DB_CONNECTION_LIMIT: 10
-      JWT_SECRET: ${JWT_SECRET:-change-this-secret}
-      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-1d}
     ports:
       - "${BACKEND_PORT:-5000}:5000"
     depends_on:
