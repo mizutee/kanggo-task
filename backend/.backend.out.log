@@ -1,0 +1,7 @@
+
+> backend@1.0.0 start
+> node index.js
+
+◇ injected env (7) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+MySQL connection initialized
+Server is running on port 5000
